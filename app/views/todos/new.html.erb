@@ -1,1 +1,17 @@
-new.html.erb
+<h1>New Todo</h1>
+
+<%= form_for @todo do |t| %>
+	<p>
+		<tr>
+			<td><%= t.label :title %></td>
+			<td><%= t.text_field :title %></td>
+		</tr>
+	</p>
+	<p>
+		<tr>
+			<td><%= t.label :description %></td>
+			<td><%= t.text_area :description %></td>
+		</tr>
+	</p>
+	<%= t.submit %>
+<% end %>
