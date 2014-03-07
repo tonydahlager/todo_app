@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
 
 	def index
+		@todos = Todo.all
 	end
 
 	def new
@@ -8,12 +9,16 @@ class TodosController < ApplicationController
 	end
 
 	def create
-		@todo = Todo.create(params[:todo].permit(:title, :description, :completed))
+		@todo = Todo.new(params[:todo].permit(:title, :description, :completed))
 		if @todo.save
-			render 'todos'
+			redirect_to @todo
 		else
 			render 'new'
 		end
+	end
+
+	def show
+		@todo = Todo.find(params[:id])
 	end
 
 	private 

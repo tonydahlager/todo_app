@@ -1,1 +1,18 @@
-index.html.erb
+<h1>Tony's Todos</h1>
+
+<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Completed?</th>
+		</tr>
+	<% @todos.each do |todo| %>
+		<tr>
+			<td><%= todo.title %></td>
+			<td><%= todo.description %></td>
+			<td><%= todo.completed %></td>
+		</tr>
+	<% end %>
+</table>
+
+

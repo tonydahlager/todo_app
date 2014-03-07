@@ -1,0 +1,15 @@
+<h1>Todo <%= @todo.id %></h1>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><%= @todo.title %></td>
+		<td><%= @todo.description %></td>
+	</tr>
+</table>
+<br>
+
+<%= link_to 'Back to Index', todos_path %>
